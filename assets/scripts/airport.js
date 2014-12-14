@@ -360,6 +360,17 @@ var Airport=Fiber.extend(function() {
         if(this.runways[i].name[1].toLowerCase() == name) return this.runways[i];
       }
       return null;
+    },
+    getDescription: function() {
+      var desc = $("<li class='airport icao-"+this.icao.toLowerCase()+"'>");
+      desc.append("<span class='icao'>" + this.icao + "</span><span class='name'>" + this.name + "</span>");
+      for(var i=0; i< this.runways.length; i++) {
+        var curr = this.runways[i];
+        desc.append("<span class='runway'>"+curr.name[0]+" ILS:"+curr.ils[0]+
+                                       ", "+curr.name[0]+" ILS:"+curr.ils[1]+"</span");
+      }
+      desc.append("</li>");
+      return $(desc);
     }
   };
 });

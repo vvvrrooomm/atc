@@ -42,6 +42,11 @@
   font-weight: bold;
 }
 
+#airport-switch .airport .runway {
+  display: block;
+  font-weight: bold;
+}
+
 #airport-switch .airport:hover {
   background-color: rgba(255, 255, 255, 0.1);
   cursor: pointer;
