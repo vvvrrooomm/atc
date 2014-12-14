@@ -39,7 +39,7 @@ function ui_complete() {
   for(var i=0;i<airports.length;i++) {
     var airport = prop.airport.airports[airports[i]];
 
-    var html = $("<li class='airport icao-"+airport.icao.toLowerCase()+"'><span class='icao'>" + airport.icao + "</span><span class='name'>" + airport.name + "</span></li>");
+    var html = airport.getDescription();
     
     html.click(airport.icao.toLowerCase(), function(e) {
       if(e.data != airport_get().icao) {
